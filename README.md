@@ -7,7 +7,7 @@ Welcome to the Renovate hands-on tutorial.
 This tutorial is based on the Mend Renovate App.
 You can also run Renovate as a CLI tool or a self-hosted application.
 
-> **Note**
+> [!NOTE]
 > Although this tutorial is based on the Mend Renovate App, the concepts discussed apply to all environments.
 
 In this tutorial, you will learn how to configure Renovate and become familiar with some of the basic features.
@@ -68,8 +68,8 @@ Now you have installed the Mend Renovate App, we can begin onboarding.
 
 Let’s review the concepts of the Onboarding PR and learn about Renovate’s initial settings.
 
-> **Note**
-> For your convenience, Renovate will not make any changes to your repo or raise PRs until after you finish onboarding.
+> [!NOTE]
+> Renovate waits for you to finish onboarding, before making changes to your repo or raises PRs.
 
 - Upon installing Renovate, an onboarding PR will be automatically generated.
 - This PR is there to help you understand Renovate and its default settings before Renovate starts running on your repository.
@@ -91,8 +91,8 @@ Let’s review the onboarding PR:
    - The link to Renovate’s official [documentation](https://docs.renovatebot.com/).
    - The link to review jobs logs in the [Renovate dashboard](https://app.renovatebot.com/dashboard).
    
-> **Note**
-> Renovate will not create dependency update PRs until the onboarding PR will be merged.
+> [!NOTE]
+> Renovate only creates dependency update PRs _after_ you merge the onboarding PR.
 
 #### These are some of the default configurations of Renovate:
 
@@ -133,7 +133,7 @@ Let’s try changing this hourly limitation to 3:
 
 <img width="830" alt="onboarding warning hourly update" src="https://user-images.githubusercontent.com/102745725/178960884-40077a5c-8fe1-422f-81c1-567ea1e6619b.png">
 
-> **Note**
+> [!NOTE]
 > May take a few moments to update.
 
 6. Merge the onboarding pull request.
@@ -144,8 +144,8 @@ Let’s try changing this hourly limitation to 3:
 
 Now that you have merged the onboarding PR, Renovate will generate Update PRs to the most recent dependency version based on your configuration. 
 
-> **Note**
-> PRs may take a couple of minutes to appear
+> [!NOTE]
+> PRs may take a couple of minutes to appear.
 
 Here we will review the basic concepts of Renovate update PRs and merge it.
 
@@ -174,7 +174,7 @@ Let’s go ahead and take a look at a Renovate update PR:
 
 1. Merge this pull request
 
-> **Note**
+> [!NOTE]
 > Renovate is highly configurable and supports:
 >
 > - On-demand PR creation.
@@ -203,7 +203,7 @@ Since GitHub defaults to disable `issues` on forked repositories, we need to ena
 
 - In order for the Dependency Dashboard to become available, we will need to re-run Renovate by triggering a webhook (for example, closing an update PR).
   
-> **Note**
+> [!NOTE]
 > This is usually done in a click via the Dependency Dashboard.
 
 1. Go to the `Pull requests` section
@@ -213,7 +213,7 @@ Since GitHub defaults to disable `issues` on forked repositories, we need to ena
 
 3. This will trigger Renovate to run and the Dependency Dashboard will appear under the `Issues` section - navigate to it
 
-> **Note**
+> [!NOTE]
 > It may take a minute to appear.
 
 ### The Dependency Dashboard includes:
@@ -243,7 +243,7 @@ Renovate offers an option to prevent automatic creation of major version update 
 
 In the Dependency Dashboard, under the `Rate Limited` section, the `Update dependency commander to vX` is waiting to be created.
 
-> **Note**
+> [!NOTE]
 > Based on the previously set `prHourlyLimit` configuration, 3 PRs per hour in our case, this PR will be created within an hour.
 
 <img width="928" alt="commander in Rate Limited" src="https://user-images.githubusercontent.com/102745725/178960104-c254c12f-08fb-4508-824d-20df60b2290f.png">
@@ -266,7 +266,7 @@ In order to limit all `major` updates to on-demand creation:
 
 2. Commit the changes
 
-> **Note**
+> [!NOTE]
 > Changing the `renovate.json` configuration file is a webhook that triggers Renovate to re-run.
 
 3. Now go back to the Dependency Dashboard in the Issues section
